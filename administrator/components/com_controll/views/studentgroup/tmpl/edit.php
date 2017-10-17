@@ -60,8 +60,8 @@ $document->addStyleSheet('components/com_controll/assets/css/controll.css');
       <input type="hidden" name="jform[id]" value="<?php echo $this->item->id; ?>" />
 
       <div class="control-group">
-				<div class="control-label"><?php echo $this->form->getLabel('group'); ?></div>
-				<div class="controls"><?php echo $this->form->getInput('group'); ?></div>
+				<div class="control-label"><?php echo $this->form->getLabel('group_name'); ?></div>
+				<div class="controls"><?php echo $this->form->getInput('group_name'); ?></div>
 			</div>
       <div class="control-group">
         <div class="control-label"><?php echo $this->form->getLabel('student'); ?></div>

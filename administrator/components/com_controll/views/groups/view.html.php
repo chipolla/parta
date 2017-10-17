@@ -126,7 +126,7 @@ class ControllViewGroups extends JViewLegacy {
 	{
     return array(
       'a.id' => JText::_('JGRID_HEADING_ID'),
-      'a.group' => JText::_('COM_CONTROLL_CONTROLLS_NAME'),
+      'a.group_name' => JText::_('COM_CONTROLL_CONTROLLS_NAME'),
       'a.ordering' => JText::_('JGRID_HEADING_ORDERING'),
       'a.state' => JText::_('JSTATUS'),
 		);

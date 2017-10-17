@@ -28,7 +28,7 @@ $canOrder	= $user->authorise('core.edit.state', 'com_controll');
 $saveOrder	= $listOrder == 'a.ordering';
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_controll&task=groups.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_controll&task=studentgroups.saveOrderAjax&tmpl=component';
 	JHtml::_('sortablelist.sortable', 'controllList', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 $sortFields = $this->getSortFields();
@@ -75,7 +75,7 @@ $GroupOptions=$subject->getOptions(); // works only if you set your field getOpt
   echo 333333;
   ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_controll&view=groups'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_controll&view=studentgroups'); ?>" method="post" name="adminForm" id="adminForm">
 <?php if(!empty($this->sidebar)): ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
@@ -144,15 +144,13 @@ $GroupOptions=$subject->getOptions(); // works only if you set your field getOpt
                 <?php endif; ?>
 
           <th class='left'>
-            <?php echo JHtml::_('grid.sort',  'группы', 'a.group', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort',  'группы', 'a.group_name', $listDirn, $listOrder); ?>
           </th>
         <th class='left'>
-				<?php echo JHtml::_('grid.sort',  'преподаватели', 'a.teacher', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort',  'студенты', 'a.student', $listDirn, $listOrder); ?>
 				</th>
 
-        <th class='left'>
-          <?php echo JHtml::_('grid.sort',  'предметы', 'a.subject', $listDirn, $listOrder); ?>
-        </th>
+
 
 
 
@@ -214,28 +212,26 @@ $GroupOptions=$subject->getOptions(); // works only if you set your field getOpt
 					</td>
                 <?php if (isset($this->items[0]->state)): ?>
 					<td class="center">
-						<?php echo JHtml::_('jgrid.published', $item->state, $i, 'groups.', $canChange, 'cb'); ?>
+						<?php echo JHtml::_('jgrid.published', $item->state, $i, 'studentgroups.', $canChange, 'cb'); ?>
 					</td>
                 <?php endif; ?>
 
 
 				<td>
 				<?php if (isset($item->checked_out) && $item->checked_out) : ?>
-					<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'groups.', $canCheckin); ?>
+					<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'studentgroups.', $canCheckin); ?>
 				<?php endif; ?>
 				<?php if ($canEdit) : ?>
-					<a href="<?php echo JRoute::_('index.php?option=com_controll&task=group.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->group); ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_controll&task=studentgroups.edit&id='.(int) $item->id); ?>">
+					<?php echo $this->escape($item->group_name); ?></a>
 				<?php else : ?>
-					<?php echo $this->escape($item->group); ?>
+					<?php echo $this->escape($item->group_name); ?>
 				<?php endif; ?>
 				</td>
                 <td>
-					<?php echo $item->teacher; ?>
+					<?php echo $item->student; ?>
 				</td>
-          <td>
-            <?php echo $item->subject; ?>
-          </td>
+
 
                 <?php if (isset($this->items[0]->id)): ?>
 					<td class="center hidden-phone">

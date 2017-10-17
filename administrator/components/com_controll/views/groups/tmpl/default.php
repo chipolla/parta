@@ -144,7 +144,7 @@ $GroupOptions=$subject->getOptions(); // works only if you set your field getOpt
                 <?php endif; ?>
 
           <th class='left'>
-            <?php echo JHtml::_('grid.sort',  'группы', 'a.group', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort',  'группы', 'a.group_name', $listDirn, $listOrder); ?>
           </th>
         <th class='left'>
 				<?php echo JHtml::_('grid.sort',  'преподаватели', 'a.teacher', $listDirn, $listOrder); ?>
@@ -225,9 +225,9 @@ $GroupOptions=$subject->getOptions(); // works only if you set your field getOpt
 				<?php endif; ?>
 				<?php if ($canEdit) : ?>
 					<a href="<?php echo JRoute::_('index.php?option=com_controll&task=group.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->group); ?></a>
+					<?php echo $this->escape($item->group_name); ?></a>
 				<?php else : ?>
-					<?php echo $this->escape($item->group); ?>
+					<?php echo $this->escape($item->group_name); ?>
 				<?php endif; ?>
 				</td>
                 <td>

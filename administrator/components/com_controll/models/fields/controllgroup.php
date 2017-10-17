@@ -46,10 +46,10 @@ class JFormFieldControllGroup extends JFormFieldList
 		$db		= JFactory::getDbo();
 		$query	= $db->getQuery(true);
 
-		$query->select('id As value, studentgroup As text');
+		$query->select('id As value, group_name As text');
 		$query->from('#__controll_groups AS a');
 		$query->where('a.state=1');
-		$query->order('a.group');
+		$query->order('a.group_name');
 
 		// Get the options.
 		$db->setQuery($query);

@@ -5,7 +5,7 @@
            readonly="true" class="readonly"
            description="JGLOBAL_FIELD_ID_DESC"/>
 
-    <field name="group" type="text" size="40" class="inputbox"
+    <field name="group_name" type="text" size="40" class="inputbox"
            label="группа"
            description="группа"
            required="true"

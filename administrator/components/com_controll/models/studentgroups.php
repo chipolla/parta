@@ -117,18 +117,18 @@ class ControllModelStudentGroups extends JModelList {
       $query->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
 
 		// Join over the users for the checked out user
-      $query->select("tc.group AS group");
-      $query->join("LEFT", "#__controll_groups AS tc ON tc.id=a.group");
+      $query->select("tc.group_name AS group_name");
+      $query->join("LEFT", "#__controll_groups AS tc ON tc.id=a.group_name");
 
     //Filter Teachers
-      $group = $this->getState('filter.group');
+      $group = $this->getState('filter.group_name');
       if (!empty($group)) {
-          $query->where('a.group = ' . $group);
+          $query->where('a.group_name = ' . $group);
       }
 
     // Join over the users for the checked out user
-      $query->select("sb.student AS student");
-      $query->join("LEFT", "#__controll_students AS sb ON sb.id=a.student");
+      $query->select("st.student AS student");
+      $query->join("LEFT", "#__controll_students AS st ON st.id=a.student");
 
     //Filter Subjects
       $student = $this->getState('filter.student');

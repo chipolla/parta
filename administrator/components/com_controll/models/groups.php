@@ -30,7 +30,7 @@ class ControllModelGroups extends JModelList {
         if (empty($config['filter_fields'])) {
             $config['filter_fields'] = array(
                 'id', 'a.id',
-                'group', 'a.group',
+                'group_name', 'a.group_name',
                 'ordering', 'a.ordering',
                 'state', 'a.state',
                 'created_by', 'a.created_by',
@@ -69,7 +69,7 @@ class ControllModelGroups extends JModelList {
         $this->setState('params', $params);
 
         // List state information.
-        parent::populateState('a.group', 'asc');
+        parent::populateState('a.group_name', 'asc');
     }
 
     /**
@@ -152,7 +152,7 @@ class ControllModelGroups extends JModelList {
           $query->where('a.id = ' . (int) substr($search, 3));
         } else {
           $search = $db->Quote('%' . $db->escape($search, true) . '%');
-          $query->where('( a.group LIKE '.$search.')');
+          $query->where('( a.group_name LIKE '.$search.')');
         }
       }
 

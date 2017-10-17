@@ -56,7 +56,7 @@
                 img="" alt="Controll/Teachers">Преподаватели</menu>
           <menu link="option=com_controll&amp;view=students" view="students"
                 img="" alt="Controll/Students">Студенты</menu>
-          <menu link="option=com_controll&amp;view=studentgroupss" view="studentgroups"
+          <menu link="option=com_controll&amp;view=studentgroups" view="studentgroups"
                 img="" alt="Controll/StudentGroups">Группы студентов</menu>
           <menu link="option=com_controll&amp;view=settings" view="settings"
                 img="components/com_controll/assets/images/s_settings.png"

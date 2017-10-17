@@ -1,6 +1,5 @@
 
-
-CREATE TABLE IF NOT EXISTS `#__controll_controll` (
+CREATE TABLE IF NOT EXISTS `jos_controll_controll` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `category` int(11) NOT NULL,
   `profile_image` varchar(255) NOT NULL,
@@ -17,7 +16,7 @@ CREATE TABLE IF NOT EXISTS `#__controll_controll` (
   PRIMARY KEY (`id`)
 ) ;
 
-CREATE TABLE IF NOT EXISTS `#__controll_category` (
+CREATE TABLE IF NOT EXISTS `jos_controll_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(200) NOT NULL,
   `ordering` int(11) NOT NULL,
@@ -27,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `#__controll_category` (
   `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ;
-CREATE TABLE IF NOT EXISTS `#__controll_subjects`(
+CREATE TABLE IF NOT EXISTS `jos_controll_subjects`(
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `subject` varchar(255) NOT NULL,
   `ordering` int(11) NOT NULL,
@@ -37,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `#__controll_subjects`(
   `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
-CREATE TABLE IF NOT EXISTS `#__controll_teachers`(
+CREATE TABLE IF NOT EXISTS `jos_controll_teachers`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `teacher` varchar(255) NOT NULL,
   `ordering` int(11) NOT NULL,
@@ -47,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `#__controll_teachers`(
   `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
  );
-CREATE TABLE IF NOT EXISTS `#__controll_students`(
+CREATE TABLE IF NOT EXISTS `jos_controll_students`(
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `student` varchar(255) NOT NULL,
  `ordering` int(11) NOT NULL,
@@ -58,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `#__controll_students`(
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `#__controll_settings` (
+CREATE TABLE IF NOT EXISTS `jos_controll_settings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `imagepath` varchar(255) NOT NULL DEFAULT 'images/controll',
   `smallwidth` varchar(255) NOT NULL DEFAULT '160',
@@ -82,14 +81,11 @@ CREATE TABLE IF NOT EXISTS `#__controll_settings` (
 ) ;
 
 
-
-
-
-CREATE TABLE IF NOT EXISTS `#__controll_groups`(
+CREATE TABLE IF NOT EXISTS `jos_controll_groups`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `teacher` int(11) NOT NULL,
   `subject` int(11) NOT NULL,
-  `group` varchar(255) NOT NULL,
+  `group_name` varchar(255) NOT NULL,
   `ordering` int(11) NOT NULL,
   `state` tinyint(4) NOT NULL,
   `checked_out` int(11) NOT NULL,
@@ -98,24 +94,23 @@ CREATE TABLE IF NOT EXISTS `#__controll_groups`(
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `#__controll_lessons`(
+CREATE TABLE IF NOT EXISTS `jos_controll_lessons`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `group` int(11) NOT NULL,
+  `group_name` int(11) NOT NULL,
   `ordering` int(11) NOT NULL,
    `state` tinyint(4) NOT NULL,
    `checked_out` int(11) NOT NULL,
-
    `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
 
 
-CREATE TABLE IF NOT EXISTS `#__controll_student_groups`(
+CREATE TABLE IF NOT EXISTS `jos_controll_student_groups`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `student` int(11) NOT NULL,
-  `group` int(11) NOT NULL,
+  `group_name` int(11) NOT NULL,
   `ordering` int(11) NOT NULL,
    `state` tinyint(4) NOT NULL,
    `checked_out` int(11) NOT NULL,
@@ -124,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `#__controll_student_groups`(
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `#__controll_visits`(
+CREATE TABLE IF NOT EXISTS `jos_controll_visits`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `student_group` int(11) NOT NULL,
   `lesson` int(11) NOT NULL,
@@ -137,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `#__controll_visits`(
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `#__controll_tests`(
+CREATE TABLE IF NOT EXISTS `jos_controll_tests`(
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `student_group` int(11) NOT NULL,
   `lesson` int(11) NOT NULL,
@@ -152,8 +147,8 @@ CREATE TABLE IF NOT EXISTS `#__controll_tests`(
   PRIMARY KEY (`id`)
 );
 --
--- Dumping data for table `#__controll_settings`
+-- Dumping data for table `jos_controll_settings`
 --
 
-INSERT INTO `#__controll_settings` (`id`, `imagepath`, `smallwidth`, `smallheight`, `mediumwidth`, `mediumheight`, `largewidth`, `largeheight`, `display_no`, `enable_bootstrap_css`, `detailpage_image_grid`, `detailpage_content_grid`, `enable_read_more`, `character_limit`, `email`, `state`, `checked_out`, `checked_out_time`, `created_by`) VALUES
+INSERT INTO `jos_controll_settings` (`id`, `imagepath`, `smallwidth`, `smallheight`, `mediumwidth`, `mediumheight`, `largewidth`, `largeheight`, `display_no`, `enable_bootstrap_css`, `detailpage_image_grid`, `detailpage_content_grid`, `enable_read_more`, `character_limit`, `email`, `state`, `checked_out`, `checked_out_time`, `created_by`) VALUES
 (1, 'images/controll', '80', '80', '340', '340', '1080', '1080', 1, 1, 2, 0, 0, 100, 'info@yourwebsite.com', 1, 0, '0000-00-00 00:00:00', 0);

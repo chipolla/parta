@@ -5,7 +5,7 @@
            readonly="true" class="readonly"
            description="JGLOBAL_FIELD_ID_DESC"/>
 
-    <field name="group" type="ControllGroup"
+    <field name="group_name" type="ControllGroup"
            label="группа"
            description="группа"
            required="true"
