@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_controll</name>
+    <creationDate>2015-02-22</creationDate>
+    <copyright>Copyright (C) 2014. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Techlabpro</author>
+    <authorEmail>techlabpro@gmail.com</authorEmail>
+    <authorUrl>http://www.techlabpro.com</authorUrl>
+    <version>1.0.1</version>
+    <description>A controll Management component to manage controlls</description>
+
+
+
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>controll.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+
+			<language tag="ru-RU">ru-RU/ru-RU.com_controll.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_controll/assets/images/s_com_controll.png" >COM_CONTROLL</menu>
+        <submenu>
+
+			    <menu link="option=com_controll&amp;view=controlls" view="controlls"
+                img="components/com_controll/assets/images/s_controlls.png"
+                alt="Controll/Controlls">COM_CONTROLL_TITLE_CONTROLLS</menu>
+          <menu link="option=com_controll&amp;view=categories" view="categories"
+                img="components/com_controll/assets/images/s_categories.png"
+                alt="Controll/Categories">COM_CONTROLL_TITLE_CATEGORIES</menu>
+          <menu link="option=com_controll&amp;view=subjects" view="subjects"
+                img="" alt="Controll/Subjects">Предметы</menu>
+          <menu link="option=com_controll&amp;view=groups" view="groups"
+                img="" alt="Controll/Groups">Группы</menu>
+          <menu link="option=com_controll&amp;view=teachers" view="teachers"
+                img="" alt="Controll/Teachers">Преподаватели</menu>
+          <menu link="option=com_controll&amp;view=students" view="students"
+                img="" alt="Controll/Students">Студенты</menu>
+          <menu link="option=com_controll&amp;view=studentgroupss" view="studentgroups"
+                img="" alt="Controll/StudentGroups">Группы студентов</menu>
+          <menu link="option=com_controll&amp;view=settings" view="settings"
+                img="components/com_controll/assets/images/s_settings.png"
+                alt="Controll/Settings">COM_CONTROLL_TITLE_SETTINGS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>controll.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+
+          <language tag="ru-RU">ru-RU/ru-RU.com_controll.ini</language>
+          <language tag="ru-RU">ru-RU/ru-RU.com_controll.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="controll"/>
+    </plugins>
+
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

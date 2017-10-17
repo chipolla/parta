@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_TLPTESTIMONIAL_TITLE_LIST_VIEW_TESTIMONIALS" option="View">
+        <message>
+                        <![CDATA[COM_TLPTESTIMONIAL_TITLE_LIST_VIEW_TESTIMONIALS_DESC]]>
+        </message>
+	</layout>
+	
+	 <fields name="params">
+        <fieldset 
+            name="basic"
+            label="COM_TLPTESTIMONIAL_FIELDSET_CATEGORY_SELECT_LABEL_TITLE">
+            <field
+                name="category_id" addfieldpath="administrator/components/com_tlptestimonial/models/fields"
+			 	type="TestimonialCategory"
+                label="COM_TLPTESTIMONIAL_FIELDSET_CATEGORY_SELECT_LABEL"
+                
+                description="JGLOBAL_SHOW_TITLE_DESC">
+            </field>
+        </fieldset>
+    </fields>
+</metadata>

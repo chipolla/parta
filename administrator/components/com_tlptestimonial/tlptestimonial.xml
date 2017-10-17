@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_tlptestimonial</name>
+    <creationDate>2015-02-22</creationDate>
+    <copyright>Copyright (C) 2014. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Techlabpro</author>
+    <authorEmail>techlabpro@gmail.com</authorEmail>
+    <authorUrl>http://www.techlabpro.com</authorUrl>
+    <version>1.0.1</version>
+    <description>A testimonial Management component to manage testimonials</description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>tlptestimonial.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_tlptestimonial.ini</language>
+			<language tag="el-GR">el-GR/el-GR.com_tlptestimonial.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_tlptestimonial/assets/images/s_com_tlptestimonial.png" >COM_TLPTESTIMONIAL</menu>
+        <submenu>
+            
+			<menu link="option=com_tlptestimonial&amp;view=testimonials" view="testimonials" img="components/com_tlptestimonial/assets/images/s_testimonials.png" alt="Tlptestimonial/Testimonials">COM_TLPTESTIMONIAL_TITLE_TESTIMONIALS</menu>
+
+			<menu link="option=com_tlptestimonial&amp;view=categories" view="categories" img="components/com_tlptestimonial/assets/images/s_categories.png" alt="Tlptestimonial/Categories">COM_TLPTESTIMONIAL_TITLE_CATEGORIES</menu>
+
+			<menu link="option=com_tlptestimonial&amp;view=settings" view="settings" img="components/com_tlptestimonial/assets/images/s_settings.png" alt="Tlptestimonial/Settings">COM_TLPTESTIMONIAL_TITLE_SETTINGS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>tlptestimonial.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_tlptestimonial.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_tlptestimonial.sys.ini</language>
+			<language tag="el-GR">el-GR/el-GR.com_tlptestimonial.ini</language>
+			<language tag="el-GR">el-GR/el-GR.com_tlptestimonial.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="tlptestimonial"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

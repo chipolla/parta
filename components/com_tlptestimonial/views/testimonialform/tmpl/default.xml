@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_TLPTESTIMONIAL_TITLE_FORM_VIEW_TESTIMONIAL" option="View">
+        <message>
+                        <![CDATA[COM_TLPTESTIMONIAL_TITLE_FORM_VIEW_TESTIMONIAL_DESC]]>
+        </message>
+    </layout>
+   
+</metadata>

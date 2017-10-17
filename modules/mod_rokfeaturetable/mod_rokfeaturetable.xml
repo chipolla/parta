@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<extension client="site" method="upgrade" type="module" version="2.5">
+    <name>RokFeatureTable</name>
+    <author>RocketTheme, LLC</author>
+    <creationDate>February 24, 2015</creationDate>
+    <authorEmail>support@rockettheme.com</authorEmail>
+    <authorUrl>http://www.rockettheme.com</authorUrl>
+    <copyright>(C) 2005 - 2015 RocketTheme, LLC. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <version>1.7</version>
+    <description><![CDATA[
+	RokFeatureTable is a very simple yet powerful module for providing tabular data. It comes with pre-populated templates and allows to create your own directly from your own template.
+	RokFeatureTable reads custom templates that are found under "templates/your_active_template/admin/rft-templates/". They must be .txt files. You can see a couple of examples from "modules/mod_rokfeaturetable/templates/".
+	]]></description>
+    <files>
+        <filename module="mod_rokfeaturetable">mod_rokfeaturetable.php</filename>
+        <folder>admin</folder>
+        <folder>templates</folder>
+        <folder>fields</folder>
+        <folder>language</folder>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename>RT-LICENSE.php</filename>
+    </files>
+    <updateservers>
+        <server name="RocketTheme Update Directory" priority="1" type="collection">http://updates.rockettheme.com/joomla/updates.xml</server>
+    </updateservers>
+	<config>
+		<fields name="params">
+			<fieldset addfieldpath="/modules/mod_rokfeaturetable/fields" name="basic">
+                <field default="1" description="" label="Built-in CSS" name="builtin_css" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="1" description="The highlighted Column" label="Highlight Column" name="highlight-col" type="list">
+                    <option value="0">None</option>
+                    <option value="1">Column 1</option>
+                    <option value="2">Column 2</option>
+                    <option value="3">Column 3</option>
+                    <option value="4">Column 4</option>
+                    <option value="5">Column 5</option>
+                    <option value="6">Column 6</option>
+                </field>
+
+                <field default="1" description="Whether to prefix custom classnames added to a cell with 'ft-cell-YOURCLASS'" label="Prefix Cell Classnames" name="prefix_class" type="radio">
+                    <option value="1">ft-cell-</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field label="Preset Templates" name="sample_templates" type="templates"/>
+
+                <field columns="1" description="" filter="raw" label="Layout Setup" name="layout" rows="1" type="layout">
+                    <field cols="50" description="" filter="raw" label="Col1 Data" name="data_col1" rows="10" type="column"/>
+                    <field cols="50" description="" filter="raw" label="Col2 Data" name="data_col2" rows="10" type="column"/>
+                    <field cols="50" description="" filter="raw" label="Col3 Data" name="data_col3" rows="10" type="column"/>
+                    <field cols="50" description="" filter="raw" label="Col4 Data" name="data_col4" rows="10" type="column"/>
+                    <field cols="50" description="" filter="raw" label="Col5 Data" name="data_col5" rows="10" type="column"/>
+                    <field cols="50" description="" filter="raw" label="Col6 Data" name="data_col6" rows="10" type="column"/>
+                </field>
+            </fieldset>
+            <fieldset name="advanced">
+
+                <field description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" name="moduleclass_sfx" type="text"/>
+
+                <field default="0" name="cache" type="hidden">
+                </field>
+                <field default="1" description="COM_MODULES_FIELD_CACHING_DESC" label="COM_MODULES_FIELD_CACHING_LABEL" name="module_cache" type="list">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field default="900" description="COM_MODULES_FIELD_CACHE_TIME_DESC" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" name="cache_time" type="text"/>
+                <field default="static" name="cachemode" type="hidden">
+                    <option value="static"/>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
